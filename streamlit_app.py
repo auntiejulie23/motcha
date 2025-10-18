@@ -82,7 +82,7 @@ for msg in st.session_state.messages:
         st.markdown(f'<div class="chat-bubble-bot">{msg["text"]}</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
-if prompt := st.chat_input("How are you feeling right now?"):
+    if prompt := st.chat_input("How are you feeling right now?"):
 
 if prompt.strip():
 st.session_state.messages.append({"role": "user", "text": prompt})
