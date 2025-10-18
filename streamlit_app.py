@@ -18,7 +18,7 @@ st.markdown("""
         align-self: flex-end;
     }
     .chat-bubble-bot {
-        background-color: #fff;
+        background-color: #4169E1;
         padding: 10px 15px;
         border-radius: 15px;
         margin: 5px 0;
