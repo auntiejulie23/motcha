@@ -82,12 +82,11 @@ for msg in st.session_state.messages:
         st.markdown(f'<div class="chat-bubble-bot">{msg["text"]}</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
-user_input = st.text_input("Type your message here...")
+if prompt := st.chat_input("How are you feeling right now?"):
 
-if st.button("Send"):
-    if user_input.strip():
-        st.session_state.messages.append({"role": "user", "text": user_input})
-        emotion = get_emotion(user_input)
+if prompt.strip():
+st.session_state.messages.append({"role": "user", "text": prompt})
+emotion = get_emotion(prompt)
         quote = random.choice(quotes[emotion])
+if emotion in QUOTES:
         st.session_state.messages.append({"role": "bot", "text": quote})
-        st.experimental_rerun()
